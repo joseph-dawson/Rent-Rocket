@@ -1,5 +1,9 @@
-button {
-    color: brown;
+a {
     float: right;
     margin-right: 20px;
+}
+
+.navbar {
+    background-color: #3C486B;
+    color: #F0F0F0
 }
