@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  imagePath: string;
 
+  constructor() {
+    this.imagePath = '/assets/img/Welcome.png'
+  }
 }

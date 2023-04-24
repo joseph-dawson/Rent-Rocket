@@ -1,3 +1,29 @@
-p {
-    color: #F9D949
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 48%;
+    float: left;
+    margin: 1%;
+}  
+
+button {
+    width: 100%;
+    height: 20vh;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50vh;
 }
