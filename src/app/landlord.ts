@@ -1,11 +1,11 @@
 import { Property } from "./property";
-import { landlordReview } from "./landlordReview";
+import { Review } from "./review";
 
 export interface Landlord {
     name: string;
     email: string;
     phone: string;
 
-    reviews: landlordReview[];
+    reviews: Review[];
     properties: Property[];
 }
