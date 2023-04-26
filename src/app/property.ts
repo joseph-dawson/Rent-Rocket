@@ -9,8 +9,8 @@ export interface Property {
 
     //apartment details
     sqFootage: number;
-    numBeds: number;
-    numBaths: number;
+    numBeds: string;
+    numBaths: string;
     description: string;
 
     //additional information
