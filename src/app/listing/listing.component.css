@@ -1,0 +1,25 @@
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 48%;
+    float: left;
+    margin: 1%;
+    display: block;
+}  
+
+/* This is for the rating stars */
+.checked {
+    color: orange;
+  }
+
+/* Container for the manager and contact tab */
+
+.manager {
+    background-color: white;
+    border: 10px solid #3C486B;
+    float: left;
+
+
+}
