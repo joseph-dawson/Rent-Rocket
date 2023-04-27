@@ -19,12 +19,22 @@ a:active {
     text-decoration: underline;
   }
 
+a:hover {
+    color: white;
+}
+
+.title:visited {
+    color: #F45050;
+}
+
 .title {
     color: #F45050;
     font-size: larger;
-    margin-left: 10px;
-    position: relative;
+    margin-left: 20px;
+    float: left;
     top: 10px;
+    text-align: left;
+    filter: drop-shadow(-1.5px 1px 1px #331111);
 }
 
 .navbar {
