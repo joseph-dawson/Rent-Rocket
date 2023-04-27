@@ -2,18 +2,48 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<!-- First Box, contains apartment info, should be on the left on full screen -->
-<div class="float-container" *ngIf="property;else other_content">
-    <div class="float-child" >
-        <div class="float-child">
-            <h3>Apartment Name: {{property.name}}</h3>
-            <p>Monthly Rent: {{property.monthlyRent | currency}}</p>
-            <p>Address: {{property.address}}</p>
-            <p>Square Footage: {{property.sqFootage}}</p>
-            <p>Beds: {{property.numBeds}} &nbsp; Baths: {{property.numBaths}} </p>
+<div class="container" *ngIf="property;else other_content">
+    <!-- Header with Apartment name -->
+    <div class="row">
+        <div class="col-lg float-container">
+            <div class="float-child">
+                <h2>{{property.name}}</h2>
+            </div>
         </div>
-        <br>
-        <div class="float-child" style="float:left">
+    </div>
+    <!-- New Row -->
+
+    <div class="row">
+
+        <!-- Top Left with Important Apartment Info -->
+
+        <div class="col-lg float-container">
+            <div class="float-child">
+                <p>Monthly Rent: {{property.monthlyRent | currency}}</p>
+                <p>Address: {{property.address}}</p>
+                <p>Sq Ft: {{property.sqFootage}}</p>
+                <p>Beds: {{property.numBeds}} &nbsp; Baths: {{property.numBaths}} </p>
+            </div>
+        </div>
+
+        <!-- Top Right with Other Apartment Info -->
+
+        <div class="col-lg float-container">
+            <div class="float-child">
+                <p>Pet Policy: {{property.petPolicy}}</p>
+                <p>Deposit Amount: {{property.depositAmount}}</p>
+                <p>Length of Rent: {{property.rentLength}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Row-->
+
+    <div class="row">
+
+        <!-- Bottom Left with Star Ratings-->
+
+        <div class="col-lg float-container">
             <div> Property Rating: 
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -32,14 +62,7 @@
 
         <!-- Bottom Right with The Manager name and Pic-->
 
-    <div class="float-child">
-        <div class="float-child">
-            <h4>Additional Information:</h4>
-            <p>Pet Policy: {{property.petPolicy}}</p>
-            <p>Deposit Amount: {{property.depositAmount}}</p>
-            <p>Length of Rent: {{property.rentLength}}</p>
-        </div>
-        <div style="display:block">
+        <div class="col-lg float-container">
             <div class="manager">
                 <img src="https://cdn.discordapp.com/attachments/314593256954658816/1101235253596651572/landlord-temp.png">
                     <h4>
@@ -47,19 +70,17 @@
                     </h4>
             </div>
         </div>
-    </div>
 
-    <!--Review boxes. Can be filled with ngFor let review of reviews-->
+    </div>
+	
+	<!--Review boxes. Can be filled with ngFor let review of reviews-->
     <div style="clear: both;">
         <h1>Reviews:</h1>
         <li *ngFor="let review of reviews">
             <span>{{review.reviewerName}}</span>
         </li>
     </div>
-
 </div>
-
-
 
 <ng-template #other_content>
     <div>
@@ -67,4 +88,3 @@
         <p>Make error page if property id doesn't exist</p>
         <p>For testing just put /listing/1 or 2-4 in searchbar</p>
     </div>
-</ng-template>
