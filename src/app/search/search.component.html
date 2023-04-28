@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="flexbox">
+
+        <div class="left-panel">
+            <div class="filters">
+                <span>Num. Beds: <input type="number" id="numBedsInput" name="Number of Beds" min="0" max="5"></span>
+                <span>Num. Baths: <input type="number" id="numBathsInput" name="Number of Baths" min="0" max="5"></span>
+                <span>Minimum Sq. Feet: <input type="number" id="sqFootageInput" name="Square Footage" min="100" max="5000"></span>
+            </div>
+
+            <li *ngFor="let property of properties">
+                <button>{{property.name}}</button>
+            </li>
+        </div>
+
+        
+        <div class="right-panel">
+            Map
+        </div>
+    </div>
+</div>

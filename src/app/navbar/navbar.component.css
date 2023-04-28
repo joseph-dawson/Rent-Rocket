@@ -39,7 +39,11 @@ a:hover {
 
 .navbar {
     background-color: #3C486B;
-    color: #F0F0F0
+    color: #F0F0F0;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
 }
 
 div {

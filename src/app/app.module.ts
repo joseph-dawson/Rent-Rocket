@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListingComponent } from './listing/listing.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    ListingComponent
+    ListingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
