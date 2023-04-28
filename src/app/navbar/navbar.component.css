@@ -37,10 +37,11 @@ a:hover {
     filter: drop-shadow(-1.5px 1px 1px #331111);
 }
 
-.navbar {
+.myNavbar {
     background-color: #3C486B;
     color: #F0F0F0;
     width: 100%;
+    height: 7.5vh;
     position: fixed;
     top: 0px;
     z-index: 1;

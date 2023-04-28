@@ -8,9 +8,15 @@
                 <span>Minimum Sq. Feet: <input type="number" id="sqFootageInput" name="Square Footage" min="100" max="5000"></span>
             </div>
 
-            <li *ngFor="let property of properties">
-                <button>{{property.name}}</button>
-            </li>
+            <div class="card" style="width: 30rem;" *ngFor="let property of properties">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                  <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
+                </div>
+              </div>
+
+            <h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1><h1>aaa</h1>
         </div>
 
         
