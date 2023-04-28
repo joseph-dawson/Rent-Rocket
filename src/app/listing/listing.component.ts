@@ -7,6 +7,8 @@ import { Property } from '../property';
 import { PropertyService } from '../property.service';
 import { Review } from '../review';
 import { ReviewService } from '../review.service';
+import { Landlord } from '../landlord';
+import { LandlordService } from '../landlord.service';
 
 @Component({
   selector: 'app-listing',
@@ -16,18 +18,21 @@ import { ReviewService } from '../review.service';
 export class ListingComponent {
   
   property: Property | undefined;
+  landlord: Landlord | undefined;
   reviews: Review[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private propertyService: PropertyService,
     private reviewService: ReviewService,
+    private landlordService: LandlordService,
     private location: Location
   ) {}
 
   ngOnInit(): void {
     this.getProperty();
     this.getReviews();
+    this.getLandlord();
   }
 
   getProperty(): void {
@@ -38,6 +43,11 @@ export class ListingComponent {
   getReviews(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.reviewService.getPropertyReviews(id).subscribe(reviews => this.reviews = reviews);
+  }
+
+  getLandlord(): void {
+    if (this.property)
+      this.landlordService.getLandlord(this.property.landlordId).subscribe(landlord => this.landlord = landlord);
   }
 
 };
