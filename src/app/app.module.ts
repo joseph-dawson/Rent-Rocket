@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -8,6 +9,7 @@ import { ListingComponent } from './listing/listing.component';
 import { SearchComponent } from './search/search.component';
 import { MapAPIComponent } from './map-api/map-api.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { GeocoderComponent } from './geocoder/geocoder.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NavbarComponent,
     ListingComponent,
     SearchComponent,
-    MapAPIComponent
+    MapAPIComponent,
+    GeocoderComponent
   ],
   imports: [
     BrowserModule,
