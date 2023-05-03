@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Property } from './property';
-import { PROPERTIES } from './mock-properties';
+import { PROPERTIES } from '../data/mock-properties';
 
 @Injectable({
   providedIn: 'root'

@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Property } from '../property';
-import { PropertyService } from '../property.service';
-import { Review } from '../review';
-import { ReviewService } from '../review.service';
-import { Landlord } from '../landlord';
-import { LandlordService } from '../landlord.service';
+import { Property } from '../property-service/property';
+import { PropertyService } from '../property-service/property.service';
+import { Review } from '../review-service/review';
+import { ReviewService } from '../review-service/review.service';
+import { Landlord } from '../landlord-service/landlord';
+import { LandlordService } from '../landlord-service/landlord.service';
 
 @Component({
   selector: 'app-listing',

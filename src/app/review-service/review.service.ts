@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Review } from './review';
-import { REVIEWS } from './mock-reviews';
+import { REVIEWS } from '../data/mock-reviews';
 
 @Injectable({
   providedIn: 'root'

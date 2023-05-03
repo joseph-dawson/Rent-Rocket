@@ -1,4 +1,4 @@
-import { Review } from "./review";
+import { Review } from "../review-service/review";
 
 export interface Property {
     id: number;
