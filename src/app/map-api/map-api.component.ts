@@ -16,7 +16,7 @@ export class MapAPIComponent {
       lng: -96.801877
   };
   zoom = 11;
-  marker1 = {lat:23,lng:12};
+  marker1 = {lat:46.893534,lng:-96.803388};
   markerPositions: google.maps.LatLngLiteral[] = [this.marker1];
 
   moveMap(event: google.maps.MapMouseEvent) {
