@@ -1,26 +1,16 @@
 <!-- First is for the stars, second is the bootstrap cdn-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-<div class="container" *ngIf="property;else other_content">
+<div class="listing card" *ngIf="property;else other_content">
     <!-- Header with Apartment name -->
-    <div class="row">
-        <div class="col-lg float-container">
-            <div class="float-child">
-                <h2>{{property.name}}</h2>
-            </div>
-        </div>
+    <div class="card-title" style="padding: 2%;">
+        <h3>{{property.name}}</h3>
+        <h6 class="card-subtitle mb-2 text-muted">{{property.address}}</h6>
     </div>
-    <!-- New Row -->
-
-    <div class="row">
-
-        <!-- Top Left with Important Apartment Info -->
-
         <div class="col-lg float-container">
             <div class="float-child">
                 <p>Monthly Rent: {{property.monthlyRent | currency}}</p>
-                <p>Address: {{property.address}}</p>
                 <p>Sq Ft: {{property.sqFootage}}</p>
                 <p>Beds: {{property.numBeds}} &nbsp; Baths: {{property.numBaths}} </p>
             </div>
@@ -83,7 +73,6 @@
             <span>{{review.reviewerName}}</span>
         </li>
     </div>
-</div>
 
 <ng-template #other_content>
     <div>
