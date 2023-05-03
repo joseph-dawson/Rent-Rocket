@@ -16,8 +16,8 @@ export class MapAPIComponent {
       lng: -96.801877
   };
   zoom = 11;
-
-  markerPositions: google.maps.LatLngLiteral[] = [];
+  marker1 = {lat:23,lng:12};
+  markerPositions: google.maps.LatLngLiteral[] = [this.marker1];
 
   moveMap(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.center = (event.latLng.toJSON());
