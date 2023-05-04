@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { MapAPIComponent } from './map-api/map-api.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GeocoderComponent } from './geocoder/geocoder.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GeocoderComponent } from './geocoder/geocoder.component';
     ListingComponent,
     SearchComponent,
     MapAPIComponent,
-    GeocoderComponent
+    GeocoderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
