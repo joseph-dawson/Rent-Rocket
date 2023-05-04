@@ -24,7 +24,7 @@ import { GeocoderComponent } from './geocoder/geocoder.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

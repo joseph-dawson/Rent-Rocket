@@ -20,4 +20,6 @@ export interface Property {
     petPolicy: string;
     depositAmount: number;
     rentLength: string;
+
+    reviewStars: number[][];
 }
