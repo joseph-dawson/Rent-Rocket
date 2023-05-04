@@ -22,4 +22,5 @@ export interface Property {
     rentLength: string;
 
     reviewStars: number[][];
+    imageSrc: string;
 }
