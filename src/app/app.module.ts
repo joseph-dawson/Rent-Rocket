@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { MapAPIComponent } from './map-api/map-api.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GeocoderComponent } from './geocoder/geocoder.component';
+import { LoginComponent } from './login/login.component';
 import { StarsReviewComponent } from './listing/stars-review/stars-review.component';
 import { LandlordComponent } from "./landlord/landlord.component"
 
@@ -22,6 +23,7 @@ import { LandlordComponent } from "./landlord/landlord.component"
     SearchComponent,
     MapAPIComponent,
     GeocoderComponent,
+    LoginComponent,
     StarsReviewComponent,
     LandlordComponent
   ],

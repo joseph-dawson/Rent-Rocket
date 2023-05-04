@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListingComponent } from './listing/listing.component';
 import { SearchComponent } from './search/search.component';
 import { LandlordComponent } from './landlord/landlord.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'landlord', component: LandlordComponent },
   { path: 'landlord/:id', component: LandlordComponent }
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
