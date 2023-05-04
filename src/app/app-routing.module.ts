@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'listing/:id', component: ListingComponent },
   { path: 'search', component: SearchComponent },
   { path: 'landlord', component: LandlordComponent },
-  { path: 'landlord/:id', component: LandlordComponent }
-  { path: 'login', component: LoginComponent}
+  { path: 'landlord/:id', component: LandlordComponent },
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
