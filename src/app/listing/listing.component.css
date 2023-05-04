@@ -1,49 +1,31 @@
+.p-2 {
+    width:50%
+}
+
+.info-wrapper {
+    padding: 3%;
+}
+
+.manager img {
+    width: 100px;
+    height: 100px;
+    float:left;
+}
+
+.information-list{
+    margin-left: 2%;
+    width: 25vw;
+    min-height: 200;
+}
+
 .listing {
     margin-left: 16.6%;
     margin-right: 16.6%;
 }
 
-.float-container {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    white-space: nowrap;
-}
-
-.float-child {
-    display: inline-block;
-    width: 48%;
-}
-
 /* This is for the rating stars */
 .checked {
     color: orange;
-}
-
-/* Container for the manager and contact tab */
-.manager {
-    background-color: white;
-    border: 10px solid #3C486B;
-    margin: 3px;
-    padding: 3%;
-    padding-left: 6%;
-    padding-right: 6%;
-    border-radius: 4%;
-}
-
-/* Resizing manager icon */
-.manager img {
-    width: 50px;
-    height: 50px;
-    float:left;
-  }
-
-.manager h4 {
-    float:right;
-    padding-left: 10px;
-    padding-right: 5px
 }
 
 /* Bootstrap CSS for structure*/

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListingComponent } from './listing/listing.component';
 import { SearchComponent } from './search/search.component';
+import { LandlordComponent } from './landlord/landlord.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -10,6 +11,8 @@ const routes: Routes = [
   { path: 'listing', component: ListingComponent },
   { path: 'listing/:id', component: ListingComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'landlord', component: LandlordComponent },
+  { path: 'landlord/:id', component: LandlordComponent }
 ];
 
 @NgModule({

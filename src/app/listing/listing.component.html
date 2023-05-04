@@ -4,67 +4,97 @@
 
 <div class="listing card" *ngIf="property;else other_content">
     <!-- Header with Apartment name -->
-    <div class="card-title" style="padding: 2%;">
-        <h3>{{property.name}}</h3>
-        <h6 class="card-subtitle mb-2 text-muted">{{property.address}}</h6>
-    </div>
-        <div class="col-lg float-container">
-            <div class="float-child">
-                <p>Monthly Rent: {{property.monthlyRent | currency}}</p>
-                <p>Sq Ft: {{property.sqFootage}}</p>
-                <p>Beds: {{property.numBeds}} &nbsp; Baths: {{property.numBaths}} </p>
-            </div>
-        </div>
-
-        <!-- Top Right with Other Apartment Info -->
-
-        <div class="col-lg float-container">
-            <div class="float-child">
-                <p>Pet Policy: {{property.petPolicy}}</p>
-                <p>Deposit Amount: {{property.depositAmount}}</p>
-                <p>Length of Rent: {{property.rentLength}}</p>
-            </div>
+    <div style="background: rgba(211, 211, 211, 0.464)" class="card">
+        <div class="card-title" style="padding: 2%;">c
+            <h2>{{property.name}}</h2>
+            <h4 class="card-subtitle mb-2 text-muted">{{property.address}}</h4>
         </div>
     </div>
 
-    <!-- New Row-->
-
-    <div class="row">
-
-        <!-- Bottom Left with Star Ratings-->
-
-        <div class="col-lg float-container">
-            <div> Property Rating: 
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+    <br>
+    <div class="info-wrapper">
+        <div class="d-flex flex-wrap">
+            <!-- This is the container with the Icons and information-->
+            <div class="p-2">
+                <ul class="information-list list-unstyled">
+                    <li> <!-- Monthly Rent "Cash Icon" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
+                      </svg><font size="3%"> Monthly Rent: {{property.monthlyRent | currency}}</font></li>
+                    <li> <!-- Square Feet "Building Icon"-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-building-fill" viewBox="0 0 16 16">
+                        <path d="M3 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3v-3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V16h3a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H3Zm1 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Z"/>
+                      </svg><font size="3%"> Sq Ft: {{property.sqFootage}}</font>
+                    </li>
+                    <li> <!-- Bed/Bath "Half Square icon" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-square-half" viewBox="0 0 16 16">
+                        <path d="M8 15V1h6a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8zm6 1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12z"/>
+                      </svg><font size="3%"> Beds/Baths: {{property.numBeds}}/{{property.numBaths}}</font>
+                    </li>
+                    <li> <!-- Pet Policy "P square icon"-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-p-square-fill" viewBox="0 0 16 16">
+                        <path d="M8.27 8.074c.893 0 1.419-.545 1.419-1.488s-.526-1.482-1.42-1.482H6.778v2.97H8.27Z"/>
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm3.5 4.002h2.962C10.045 4.002 11 5.104 11 6.586c0 1.494-.967 2.578-2.55 2.578H6.784V12H5.5V4.002Z"/>
+                      </svg><font size="3%"> Pet Policy: {{property.petPolicy}}</font>
+                    </li>
+                    <li> <!-- Deposit "Wallet icon" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wallet-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                        <path d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
+                      </svg><font size="3%"> Deposit Amount: {{property.depositAmount}} </font>
+                    </li>
+                    <li> <!-- Length of rent "Clock Icon" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        </svg> <font size="3%"> Length of Rent: {{property.rentLength}}</font>
+                    </li>
+                    <li> <!-- Property Rating "Award Icon"-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-award-fill" viewBox="0 0 16 16">
+                            <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                            <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                          </svg> <font size="3%"> Resident Rating: 
+                            <div class="col-lg float-container">
+                                <div>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                        </div> </font>
+                    </li>
+                </ul>
             </div>
-            <div> Landlord Rating: 
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                <!-- Top Right with Other Apartment Info -->
+            <div class="p-2">
+                <div class="card">
+                    <div class="manager information-list">
+                        <div *ngIf="property && landlord">
+                            <a routerLink="../../landlord/{{landlord.id}}">
+                                <img src="https://cdn.discordapp.com/attachments/314593256954658816/1101235253596651572/landlord-temp.png" alt="Card image cap">
+                            </a>
+                            <div class="">
+                              <p class="" >
+                                <font size="3.4%">
+                                    <b>
+                                        <a routerLink="../../landlord/{{landlord.id}}"> <!-- Landlord link -->
+                                            {{landlord.name}}
+                                        </a>
+                                    </b> is the property manager of {{property.name}}, has an average rating of [RATING JS HERE] and can be reached at {{landlord.phone}}</font></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Bottom Right with The Manager name and Pic-->
+        </div> <!-- End of the information modules -->
+    </div> <!-- End of apartment information div-->
+</div> <!-- End of main listing container -->
 
-        <div class="col-lg float-container">
-            <div class="manager">
-                <img src="https://cdn.discordapp.com/attachments/314593256954658816/1101235253596651572/landlord-temp.png">
-                    <h4>
-                        <span><i>Manager Name</i></span>
-                    </h4>
-                    <h4>
-                        <span *ngIf="landlord">{{landlord.name}}</span>
-                    </h4>
-            </div>
-        </div>
-
-    </div>
+    
+        
+        
 	
 	<!--Review boxes. Can be filled with ngFor let review of reviews-->
     <div style="clear: both;">

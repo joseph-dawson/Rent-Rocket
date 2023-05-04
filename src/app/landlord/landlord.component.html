@@ -1,0 +1,10 @@
+<div *ngIf="landlord;else other_content">
+    <p>TEMP: {{landlord.name}}, {{landlord.email}}, {{landlord.phone}}, </p>
+</div>
+
+<ng-template #other_content>
+    <div>
+        <h1>Landlord not found</h1>
+        <p>Make error page if property id doesn't exist</p>
+        <p>For testing just put /landlord/(1,2,3) in searchbar</p>
+    </div>
