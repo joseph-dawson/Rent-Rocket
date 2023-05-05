@@ -9,7 +9,6 @@
 
 .left-panel {
     width: 63%;
-    border: 1px solid burlywood;
     margin: 1%
 }
 
@@ -17,7 +16,6 @@
     position: sticky;
     height: 85%;
     width: 37%;
-    border: 1px solid gray;
     top: 13vh;
     margin: 1%;
     overflow: hidden;
@@ -29,5 +27,6 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: 31rem 31rem;
+    grid-template-columns: 50% 50%;
 }
+
