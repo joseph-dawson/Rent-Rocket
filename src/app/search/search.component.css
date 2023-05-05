@@ -8,15 +8,15 @@
 }
 
 .left-panel {
-    width: 50%;
+    width: 63%;
     border: 1px solid burlywood;
     margin: 1%
 }
 
 .right-panel {
     position: sticky;
-    height: 85vh;
-    width: 50%;
+    height: 85%;
+    width: 37%;
     border: 1px solid gray;
     top: 13vh;
     margin: 1%;
@@ -25,4 +25,9 @@
 
 .filters {
     color: black;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 31rem 31rem;
 }
