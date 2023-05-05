@@ -31,12 +31,12 @@ export class SearchComponent {
       if (this.filtered == false)
       {
       this.filteredProperties = this.properties.filter(obj => {
-      return obj.numBeds > this.numBeds});
+      return obj.numBeds >= this.numBeds});
       }
       else 
       {
         this.filteredProperties = this.filteredProperties.filter(obj => {
-          return obj.numBeds > this.numBeds});
+          return obj.numBeds >= this.numBeds});
       }
       this.filtered = true;
     }
@@ -45,12 +45,12 @@ export class SearchComponent {
       if (this.filtered == false)
       {
       this.filteredProperties = this.properties.filter(obj => {
-      return obj.numBaths > this.numBaths});
+      return obj.numBaths >= this.numBaths});
       }
       else 
       {
         this.filteredProperties = this.filteredProperties.filter(obj => {
-          return obj.numBaths > this.numBaths});
+          return obj.numBaths >= this.numBaths});
       }
       this.filtered = true;
     }
@@ -59,12 +59,12 @@ export class SearchComponent {
       if (this.filtered == false)
       {
       this.filteredProperties = this.properties.filter(obj => {
-      return obj.sqFootage > this.sqFeet});
+      return obj.sqFootage >= this.sqFeet});
       }
       else 
       {
         this.filteredProperties = this.filteredProperties.filter(obj => {
-          return obj.sqFootage > this.sqFeet});
+          return obj.sqFootage >= this.sqFeet});
       }
       this.filtered = true;
     }

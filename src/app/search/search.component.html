@@ -25,8 +25,8 @@
             </div> -->
 
             <div class="wrapper">
-                <div *ngIf="filtered">
-                    <div class="card" *ngFor="let property of properties">
+                <div *ngIf="filtered; else elseBlock">
+                    <div class="card" *ngFor="let property of filteredProperties">
                         <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
                         <div class="card-body">
                         <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
@@ -34,6 +34,16 @@
                     </div>
                   </div>
                 </div>
+                    <ng-template #elseBlock>
+                    <div class="card" *ngFor="let property of properties">
+                        <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
+                        <div class="card-body">
+                        <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                      <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
+                    </div>
+                  </div>
+                </ng-template>
+                
             </div>
         </div>
 
