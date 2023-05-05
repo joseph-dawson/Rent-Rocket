@@ -9,6 +9,7 @@ export interface Property {
     monthlyRent: number;
     address: string;
     reviews: Review[];
+    latLng : google.maps.LatLngLiteral;
 
     //apartment details
     sqFootage: number;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from '../search/search.component';
+import { PROPERTIES } from '../data/mock-properties';
 @Component({
   selector: 'app-maps-api',
   templateUrl: './map-api.component.html',
@@ -16,6 +16,7 @@ export class MapAPIComponent {
       lng: -96.801877
   };
   zoom = 11;
+  
   maple = {lat:46.918355,lng:-96.792087};
   main = {lat:46.940607,lng:-96.795984};
   oak = {lat:46.896867,lng:-96.856775};
@@ -32,8 +33,11 @@ export class MapAPIComponent {
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();
   }
-
-  addMarker(location: google.maps.LatLngLiteral) {
-    this.markerPositions.push(location);
-}
+  
+  filter()
+  {
+    PROPERTIES.forEach(element => {
+      this.markerPositions.filter(obj => obj === element.latLng)
+    });
+  }
 }
