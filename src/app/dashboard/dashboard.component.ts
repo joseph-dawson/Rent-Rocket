@@ -9,6 +9,6 @@ export class DashboardComponent {
   imagePath: string;
 
   constructor() {
-    this.imagePath = '/assets/img/RentRocketWelcomePage.jpg'
+    this.imagePath = '/assets/img/RentRocketWelcomePage2.jpg'
   }
 }
