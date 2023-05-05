@@ -26,6 +26,8 @@ export class SearchComponent {
   }
   Filter()
   {
+    this.getProperties();
+    this.filtered = false;
     if(this.numBeds !=0 && this.numBeds != null) 
     {
       if (this.filtered == false)
@@ -76,5 +78,6 @@ export class SearchComponent {
       this.getProperties()
       this.filtered = false;
     }
+    
   }
 }
