@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { SavedPropertiesComponent } from '../saved-properties/saved-properties.component';
 import { Property } from '../property-service/property';
 import { PropertyService } from '../property-service/property.service';
 import { Review } from '../review-service/review';
@@ -9,6 +9,7 @@ import { ReviewService } from '../review-service/review.service';
 import { Landlord } from '../landlord-service/landlord';
 import { LandlordService } from '../landlord-service/landlord.service';
 import { SearchComponent } from '../search/search.component';
+import { SaveServiceService } from '../save-service.service';
 
 @Component({
   selector: 'app-listing',
@@ -28,7 +29,8 @@ export class ListingComponent {
     private propertyService: PropertyService,
     private reviewService: ReviewService,
     private landlordService: LandlordService,
-    private location: Location
+    private location: Location,
+    private saveService: SaveServiceService
   ) {}
 
   ngOnInit(): void {
@@ -62,6 +64,10 @@ export class ListingComponent {
 
   SaveProperty()
   {
-    
+    if(this.property !=null)
+    {
+    var id: number = this.property.id;
+    this.saveService.saveProperty(id)
+    }
   }
 };

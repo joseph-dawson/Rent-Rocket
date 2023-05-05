@@ -77,7 +77,7 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                         </div> 
-                        <p>{{propertyScore}}</p>
+                        <p></p>
                     <button class="btn btn-primary" (click)="SaveProperty()">Save Property</button></font>
                     </li>
                 </ul>
@@ -97,7 +97,7 @@
                                         <a routerLink="../../landlord/{{landlord.id}}"> <!-- Landlord link -->
                                             {{landlord.name}}
                                         </a>
-                                    </b> is the property manager of {{property.name}}, has an average rating of {{landlordScore}} and can be reached at {{landlord.phone}}</font></p>
+                                    </b> is the property manager of {{property.name}}, they have an average rating of {{landlordScore}} stars and can be reached at {{landlord.phone}}</font></p>
                             </div>
                         </div>
                     </div>
@@ -113,10 +113,10 @@
         
 	
 	<!--Review boxes. Can be filled with ngFor let review of reviews-->
-    <div style="clear: both;">
+    <div style="clear: both; padding: 2%">
         <h1>Reviews:</h1>
         <li *ngFor="let review of reviews">
-            <strong>{{review.reviewerName}}: {{review.rating}}</strong>
+            <strong>{{review.reviewerName}}: {{review.rating}} Stars</strong>
             <p>{{review.reviewText}}</p>
             <p> </p>
         </li>
