@@ -13,5 +13,13 @@ export const LANDLORDS: Landlord[] = [
 
     { id: 3, name: 'Michael Thompson', email: 'michael.thompson@shadygroveapartments.com', phone: '(555) 456-7890', properties: [PROPERTIES[3]],
     reviews: REVIEWS.filter(r => r.landlordId === 3) },
-    //Noah Singh, Emily Lee, Beverly Mata
+
+    { id: 4, name: 'Jennifer Kim', email: 'jennifer.kim@sunsetterraceapartments.com', phone: '(555) 123-4567', properties: [PROPERTIES[4]],
+    reviews: REVIEWS.filter(r => r.landlordId === 4) },
+
+    { id: 5, name: 'David Chen', email: 'david.chen@westwoodparkapartments.com', phone: '(555) 987-6543', properties: [PROPERTIES[5]],
+    reviews: REVIEWS.filter(r => r.landlordId === 5) },
+
+    { id: 6, name: 'Jessica Lee', email: 'jessica.lee@cedarwoodheights.com', phone: '(555) 555-5555', properties: [PROPERTIES[6]],
+    reviews: REVIEWS.filter(r => r.landlordId === 6) },
 ];

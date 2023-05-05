@@ -21,6 +21,6 @@ export interface Property {
     depositAmount: number;
     rentLength: string;
 
-    reviewStars: number[][];
+    //reviewStars: number[][];
     imageSrc: string;
 }
