@@ -77,6 +77,7 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                         </div> 
+                        <p>{{propertyScore}}</p>
                     <button class="btn btn-primary" (click)="SaveProperty()">Save Property</button></font>
                     </li>
                 </ul>
@@ -96,7 +97,7 @@
                                         <a routerLink="../../landlord/{{landlord.id}}"> <!-- Landlord link -->
                                             {{landlord.name}}
                                         </a>
-                                    </b> is the property manager of {{property.name}}, has an average rating of [RATING JS HERE] and can be reached at {{landlord.phone}}</font></p>
+                                    </b> is the property manager of {{property.name}}, has an average rating of {{landlordScore}} and can be reached at {{landlord.phone}}</font></p>
                             </div>
                         </div>
                     </div>

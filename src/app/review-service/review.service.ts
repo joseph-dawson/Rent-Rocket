@@ -24,24 +24,26 @@ export class ReviewService {
     return of(propertyReviews);
   }
 
-  getLandlordReviewScore(id: number): number {
+  getLandlordReviewScore(id: number): Observable<number> {
     const landlordReviews = REVIEWS.filter(r => r.landlordId === id)!;
     var totalScore = 0;
     for (var thisReview of landlordReviews) {
       totalScore += thisReview.rating;
     }
     totalScore = totalScore / landlordReviews.length;
-    return Math.ceil(totalScore);
+    totalScore = Math.ceil(totalScore);
+    return of(totalScore);
   }
 
-  getPropertyReviewScore(id: number): number {
+  getPropertyReviewScore(id: number): Observable<number> {
     const propertyReviews = REVIEWS.filter(r => r.propertyId === id)!;
     var totalScore = 0;
     for (var thisReview of propertyReviews) {
       totalScore += thisReview.rating;
     }
     totalScore = totalScore / propertyReviews.length;
-    return Math.ceil(totalScore);
+    totalScore = Math.ceil(totalScore);
+    return of(totalScore);
   }
 
   constructor() { }

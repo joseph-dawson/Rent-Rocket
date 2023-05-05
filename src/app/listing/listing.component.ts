@@ -20,6 +20,8 @@ export class ListingComponent {
   property: Property | undefined;
   landlord: Landlord | undefined;
   reviews: Review[] = [];
+  landlordScore: number;
+  propertyScore: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +35,7 @@ export class ListingComponent {
     this.getProperty();
     this.getReviews();
     this.getLandlord();
+    this.getScores();
   }
 
   getProperty(): void {
@@ -48,6 +51,13 @@ export class ListingComponent {
   getLandlord(): void {
     if (this.property)
       this.landlordService.getLandlord(this.property.landlordId).subscribe(landlord => this.landlord = landlord);
+  }
+
+  getScores(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.reviewService.getPropertyReviewScore(id).subscribe(propertyScore => this.propertyScore = propertyScore);
+    if (this.landlord)
+      this.reviewService.getLandlordReviewScore(this.landlord.id).subscribe(landlordScore => this.landlordScore = landlordScore);
   }
 
   SaveProperty()
