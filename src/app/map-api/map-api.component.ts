@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PROPERTIES } from '../data/mock-properties';
+import { Property } from '../property-service/property';
 @Component({
   selector: 'app-maps-api',
   templateUrl: './map-api.component.html',
@@ -7,7 +8,7 @@ import { PROPERTIES } from '../data/mock-properties';
 })
 export class MapAPIComponent {
   constructor() {}
-      
+  @Input() filteredProperties : Property[];
   ngOnInit(): void {}
 
   display: any;
@@ -33,10 +34,10 @@ export class MapAPIComponent {
   move(event: google.maps.MapMouseEvent) {
       if (event.latLng != null) this.display = event.latLng.toJSON();
   }
-  
+
   filter()
   {
-    PROPERTIES.forEach(element => {
+    this.filteredProperties.forEach(element => {
       this.markerPositions.filter(obj => obj === element.latLng)
     });
   }
