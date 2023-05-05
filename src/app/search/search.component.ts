@@ -26,7 +26,7 @@ export class SearchComponent {
   }
   Filter()
   {
-    if(this.numBeds !=0)
+    if(this.numBeds !=0 && this.numBeds != null) 
     {
       if (this.filtered == false)
       {
@@ -40,7 +40,8 @@ export class SearchComponent {
       }
       this.filtered = true;
     }
-    if(this.numBaths !=0)
+
+    if(this.numBaths !=0 && this.numBaths != null)
     {
       if (this.filtered == false)
       {
@@ -54,7 +55,8 @@ export class SearchComponent {
       }
       this.filtered = true;
     }
-    if(this.sqFeet !=0)
+
+    if(this.sqFeet !=0 && this.sqFeet != null)
     {
       if (this.filtered == false)
       {
@@ -68,6 +70,11 @@ export class SearchComponent {
       }
       this.filtered = true;
     }
-    
+
+    if(this.numBaths==0 && this.numBeds==0 && this.sqFeet==0)
+    {
+      this.getProperties()
+      this.filtered = false;
+    }
   }
 }

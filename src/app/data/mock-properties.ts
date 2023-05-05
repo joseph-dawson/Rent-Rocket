@@ -4,7 +4,7 @@ import { REVIEWS } from "./mock-reviews";
 export const PROPERTIES: Property[] = [
     { id: 1, landlordId: 1, name: 'Maplewood Heights Apartments', 
     description: 'Maplewood Heights Apartments is a luxury apartment complex nestled in the heart of a bustling downtown area. The complex boasts modern amenities such as a fitness center, rooftop pool, and 24-hour concierge service. The units are spacious and feature high-end finishes, stainless steel appliances, and breathtaking views of the city skyline.', 
-    monthlyRent: 3500, address: '1234 Maple Street, Suite 567, Fargo, USA', sqFootage: 1200, numBeds: 2, numBaths: 2, 
+    monthlyRent: 3500, address: '1234 Maple Street, Suite 567, Fargo, USA', sqFootage: 1200, numBeds: 2, numBaths: 1, 
     depositAmount: 5500, rentLength: '6 month lease', petPolicy: 'Allowed', 
     reviews: REVIEWS.filter(r => r.propertyId === 1), reviewStars:[[255,0,0,0],[255,0,0,0],[255,0,0,0],[255,0,0,0],[255,0,0,0]], imageSrc: '/assets/img/Heights.jpg' },
     
@@ -22,7 +22,7 @@ export const PROPERTIES: Property[] = [
 
     { id: 4, landlordId: 3, name: 'Shady Grove Apartments', 
     description: 'Shady Grove Apartments offers low-cost living in a less desirable location. The apartments are old and in poor condition, with outdated appliances and worn-out finishes. Building amenities are minimal and may not be properly maintained.', 
-    monthlyRent: 800, address: '9012 Elm St, Fargo, USA', sqFootage: 600, numBeds: 1, numBaths: 1,
+    monthlyRent: 800, address: '9012 Elm St, Fargo, USA', sqFootage: 600, numBeds: 1, numBaths: 2,
     depositAmount: 500, rentLength: 'Month-to-month lease', petPolicy: 'No pets allowed.',
     reviews: REVIEWS.filter(r => r.propertyId === 4), reviewStars:[[255,0,0,0],[255,0,0,0],[255,0,0,0],[255,0,0,0],[255,0,0,0]], imageSrc: '/assets/img/Shady.jpg'},
 ];
