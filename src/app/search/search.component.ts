@@ -10,7 +10,11 @@ import { PropertyService } from '../property-service/property.service';
 })
 export class SearchComponent {
   properties: Property[] = [];
-
+  numBeds : number;
+  numBaths : number;
+  sqFeet :number;
+  filteredProperties : Property[] = [];
+  filtered :boolean = false;
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
@@ -22,39 +26,48 @@ export class SearchComponent {
   }
   Filter()
   {
-    var numBaths : number = 0;
-    var numBeds : number = 0;
-    switch(numBaths)
+    if(this.numBeds !=0)
     {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      case 5:
-        break;
-      default:
-        break;
+      if (this.filtered == false)
+      {
+      this.filteredProperties = this.properties.filter(obj => {
+      return obj.numBeds > this.numBeds});
+      }
+      else 
+      {
+        this.filteredProperties = this.filteredProperties.filter(obj => {
+          return obj.numBeds > this.numBeds});
+      }
+      this.filtered = true;
     }
-
-    switch (numBeds)
+    if(this.numBaths !=0)
     {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      case 5:
-        break;
-      default:
-        break;
+      if (this.filtered == false)
+      {
+      this.filteredProperties = this.properties.filter(obj => {
+      return obj.numBaths > this.numBaths});
+      }
+      else 
+      {
+        this.filteredProperties = this.filteredProperties.filter(obj => {
+          return obj.numBaths > this.numBaths});
+      }
+      this.filtered = true;
     }
-
+    if(this.sqFeet !=0)
+    {
+      if (this.filtered == false)
+      {
+      this.filteredProperties = this.properties.filter(obj => {
+      return obj.sqFootage > this.sqFeet});
+      }
+      else 
+      {
+        this.filteredProperties = this.filteredProperties.filter(obj => {
+          return obj.sqFootage > this.sqFeet});
+      }
+      this.filtered = true;
+    }
+    
   }
 }

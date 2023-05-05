@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -9,6 +8,7 @@ import { Review } from '../review-service/review';
 import { ReviewService } from '../review-service/review.service';
 import { Landlord } from '../landlord-service/landlord';
 import { LandlordService } from '../landlord-service/landlord.service';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-listing',
@@ -50,4 +50,8 @@ export class ListingComponent {
       this.landlordService.getLandlord(this.property.landlordId).subscribe(landlord => this.landlord = landlord);
   }
 
+  SaveProperty()
+  {
+    
+  }
 };

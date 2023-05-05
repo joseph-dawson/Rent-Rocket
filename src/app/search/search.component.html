@@ -4,9 +4,9 @@
         <div class="left-panel">
             <!-- filters -->
             <div class="filters" padding="20px 20px 20px 20px">
-                <span>Num. Beds: <input type="number" id="numBedsInput" name="Number of Beds" min="0" max="5"></span>
-                <span>Num. Baths: <input type="number" id="numBathsInput" name="Number of Baths" min="0" max="5"></span>
-                <span>Minimum Sq. Feet: <input type="number" id="sqFootageInput" name="Square Footage" min="100" max="5000"></span>
+                <span>Num. Beds: <input type="number" [(ngModel)]='numBeds'id="numBedsInput" name="Number of Beds" min="0" max="5"></span>
+                <span>Num. Baths: <input type="number"[(ngModel)]='numBaths' id="numBathsInput" name="Number of Baths" min="0" max="5"></span>
+                <span>Minimum Sq. Feet: <input type="number" [(ngModel)]="sqFeet" id="sqFootageInput" name="Square Footage" min="100" max="5000"></span>
                 <button (click)="Filter()">Search</button>
             </div>
 
@@ -25,13 +25,15 @@
             </div> -->
 
             <div class="wrapper">
-                <div class="card" style="" *ngFor="let property of properties">
-                    <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
-                    <div class="card-body">
+                <div *ngIf="filtered">
+                    <div class="card" *ngFor="let property of properties">
+                        <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
+                        <div class="card-body">
                         <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
                       <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
                     </div>
                   </div>
+                </div>
             </div>
         </div>
 
