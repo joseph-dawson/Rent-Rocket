@@ -116,7 +116,9 @@
     <div style="clear: both;">
         <h1>Reviews:</h1>
         <li *ngFor="let review of reviews">
-            <span>{{review.reviewerName}}</span>
+            <strong>{{review.reviewerName}}: {{review.rating}}</strong>
+            <p>{{review.reviewText}}</p>
+            <p> </p>
         </li>
     </div>
 
