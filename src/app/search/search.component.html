@@ -2,7 +2,6 @@
     <div class="flexbox">
 
         <div class="left-panel">
-
             <!-- filters -->
             <div class="filters" padding="20px 20px 20px 20px">
                 <span>Num. Beds: <input type="number" [(ngModel)]='numBeds'id="numBedsInput" name="Number of Beds" min="0" max="5"></span>
@@ -17,9 +16,10 @@
                     <div class="card" *ngFor="let property of filteredProperties" style="padding: 3px">
                         <img class="card-img-top" height="300" src={{property.imageSrc}} alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <p><span style="float: left"><b>{{property.name}}</b></span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                          <br>
+                          <p class="card-text">Num. Beds: {{property.numBeds}} Num. Baths: {{property.numBaths}}</p>
+                          <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
                         </div>
                     </div>
                 </div>
@@ -31,9 +31,10 @@
                     <div class="card" *ngFor="let property of properties" style="padding: 3px">
                         <img class="card-img-top" height="300" src={{property.imageSrc}} alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <p><span style="float: left"><b>{{property.name}}</b></span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                          <br>
+                          <p class="card-text">Num. Beds: {{property.numBeds}} Num. Baths: {{property.numBaths}}</p>
+                          <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
                         </div>
                     </div>
                 </div>
