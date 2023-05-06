@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PROPERTIES } from '../data/mock-properties';
 import { Property } from '../property-service/property';
+import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 @Component({
   selector: 'app-maps-api',
   templateUrl: './map-api.component.html',
@@ -9,7 +10,7 @@ import { Property } from '../property-service/property';
 export class MapAPIComponent {
   constructor() {}
   @Input() filteredProperties : Property[];
-  ngOnInit(): void {}
+  ngOnInit(): void {this.filter()}
 
   display: any;
   center: google.maps.LatLngLiteral = {
@@ -37,8 +38,15 @@ export class MapAPIComponent {
 
   filter()
   {
+    var breakTest: boolean = true;
     this.filteredProperties.forEach(element => {
       this.markerPositions.filter(obj => obj === element.latLng)
     });
+    if (breakTest == true)
+    {
+      this.ngOnInit();
+    }
+    breakTest=false;
+    
   }
 }
