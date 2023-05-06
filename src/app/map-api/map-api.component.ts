@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { SearchComponent } from '../search/search.component';
+import { Component, Input } from '@angular/core';
+import { PROPERTIES } from '../data/mock-properties';
+import { Property } from '../property-service/property';
 @Component({
   selector: 'app-maps-api',
   templateUrl: './map-api.component.html',
@@ -7,7 +8,7 @@ import { SearchComponent } from '../search/search.component';
 })
 export class MapAPIComponent {
   constructor() {}
-      
+  @Input() filteredProperties : Property[];
   ngOnInit(): void {}
 
   display: any;
@@ -16,6 +17,7 @@ export class MapAPIComponent {
       lng: -96.801877
   };
   zoom = 11;
+  
   maple = {lat:46.918355,lng:-96.792087};
   main = {lat:46.940607,lng:-96.795984};
   oak = {lat:46.896867,lng:-96.856775};
@@ -33,7 +35,10 @@ export class MapAPIComponent {
       if (event.latLng != null) this.display = event.latLng.toJSON();
   }
 
-  addMarker(location: google.maps.LatLngLiteral) {
-    this.markerPositions.push(location);
-}
+  filter()
+  {
+    this.filteredProperties.forEach(element => {
+      this.markerPositions.filter(obj => obj === element.latLng)
+    });
+  }
 }

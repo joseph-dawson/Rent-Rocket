@@ -13,6 +13,6 @@ export class SaveServiceService {
   saveProperty(id:number)
   {
     const property = PROPERTIES.find(p => p.id === id)!;
-    
+    return property;
   }
 }
