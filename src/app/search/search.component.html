@@ -25,7 +25,7 @@
             </div> -->
 
             <div class="wrapper">
-                <div *ngIf="filtered; else elseBlock">
+                <div *ngIf="filtered==true; else elseBlock">
                     <div class="card" *ngFor="let property of filteredProperties">
                         <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
                         <div class="card-body">
