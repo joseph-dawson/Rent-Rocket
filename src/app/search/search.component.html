@@ -3,53 +3,72 @@
 
         <div class="left-panel">
             <!-- filters -->
-            <div class="filters" padding="20px 20px 20px 20px">
+
+            <!-- <div class="filters" padding="20px 20px 20px 20px">
                 <span>Num. Beds: <input type="number" [(ngModel)]='numBeds'id="numBedsInput" name="Number of Beds" min="0" max="5"></span>
                 <span>Num. Baths: <input type="number"[(ngModel)]='numBaths' id="numBathsInput" name="Number of Baths" min="0" max="5"></span>
                 <span>Minimum Sq. Feet: <input type="number" [(ngModel)]="sqFeet" id="sqFootageInput" name="Square Footage" min="100" max="5000"></span>
                 <button (click)="Filter()">Search</button>
-            </div>
-
-            <!-- cards -->
-            <!-- <div class="card" style="width: 31rem; display: flex;" *ngFor="let property of properties">
-                <img class="card-img-top" src={{property.imageSrc}} alt="Card image cap">
-                <div class="card-body">
-                    <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
-                  <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
-                </div>
-              </div> -->
-
-            <!-- <div style="display: table-row; border: 1px solid yellow;" *ngFor="let property of properties; let i=index">
-                <div style="display: table-cell; width: 31rem; border: 1px solid red;">left</div>
-                <div style="display: table-cell; width: 31rem; border: 1px solid blue;">right</div>
             </div> -->
 
-            <div class="wrapper">
-                <div *ngIf="filtered==true; else elseBlock">
-                    <div class="card" *ngFor="let property of filteredProperties">
-                        <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
-                        <div class="card-body">
-                        <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
-                      <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
-                    </div>
-                  </div>
+            <div class="card" style="margin-bottom: 10px;">
+                <div class="card-body">
+                    <form class="form-inline">
+                        <div class="filters" padding="20px 20px 20px 20px">
+                            <div class="form-group mx-sm-3 mb-2" style="margin-top: 4px;">
+                            <label for="inputPassword2" class="sr-only">Min Num. Beds</label>
+                            <input type="number" [(ngModel)]='numBeds' class="form-control" id="numBedsInput" name="Number of Beds" placeholder="Min Num. Beds">
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2" style="margin-top: 4px;">
+                            <label for="inputPassword2" class="sr-only">Min Num. Baths</label>
+                            <input type="number" [(ngModel)]='numBaths' class="form-control" id="numBathsInput" name="Number of Baths" placeholder="Min Num. Baths">
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2" style="margin-top: 4px;">
+                            <label for="inputPassword2" class="sr-only">Min Sq. Footage</label>
+                            <input type="number" [(ngModel)]='sqFeet' class="form-control" id="sqFootageInput" name="Square Footage" placeholder="Min Sq. Footage">
+                            </div>
+                            <button type="submit" (click)="Filter()" class="btn btn-primary mb-2" style="float: right; margin-right: 10px; margin-top: 4px">Filter</button>
+                        </div>
+                    </form>
                 </div>
-                    <ng-template #elseBlock>
-                    <div class="card" *ngFor="let property of properties">
-                        <img class="card-img-top" style="height: 50%;" src={{property.imageSrc}} alt="Card image cap">
-                        <div class="card-body">
-                        <p><span style="float: left">{{property.name}}</span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
-                      <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
-                    </div>
-                  </div>
-                </ng-template>
-                
             </div>
+
+            <!-- filtered cards -->
+            <div *ngIf="filtered; else elseBlock">
+                <div class="wrapper">
+                    <div class="card" *ngFor="let property of filteredProperties" style="padding: 3px">
+                        <img class="card-img-top" height="300" src={{property.imageSrc}} alt="Card image cap">
+                        <div class="card-body">
+                          <p><span style="float: left"><b>{{property.name}}</b></span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                          <br>
+                          <p class="card-text">Num. Beds: {{property.numBeds}} Num. Baths: {{property.numBaths}}</p>
+                          <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- unfiltered cards -->
+            <ng-template #elseBlock>
+                <div class="wrapper">
+                    <div class="card" *ngFor="let property of properties" style="padding: 3px">
+                        <img class="card-img-top" height="300" src={{property.imageSrc}} alt="Card image cap">
+                        <div class="card-body">
+                          <p><span style="float: left"><b>{{property.name}}</b></span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+                          <br>
+                          <p class="card-text">Num. Beds: {{property.numBeds}} Num. Baths: {{property.numBaths}}</p>
+                          <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            
+
         </div>
 
         
         <div class="right-panel">
-            <app-maps-api></app-maps-api>
+            <app-maps-api [filteredProperties]="filteredProperties"></app-maps-api>
         </div>
     </div>
 </div>

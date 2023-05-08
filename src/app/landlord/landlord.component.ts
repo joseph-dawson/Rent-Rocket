@@ -18,6 +18,7 @@ export class LandlordComponent {
   property: Property | undefined;
   landlord: Landlord | undefined;
   reviews: Review[] = [];
+  score: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +31,7 @@ export class LandlordComponent {
   ngOnInit(): void {
     this.getLandlord();
     this.getReviews();
+    this.getScores();
   }
 
   getLandlord(): void {
@@ -40,5 +42,10 @@ export class LandlordComponent {
   getReviews(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.reviewService.getLandlordReviews(id).subscribe(reviews => this.reviews = reviews);
+  }
+
+  getScores(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.reviewService.getLandlordReviewScore(id).subscribe(score => this.score = score);
   }
 }

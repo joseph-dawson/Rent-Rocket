@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <div class="card" *ngFor="let property of savedProperties" style="padding: 3px">
+        <img class="card-img-top" height="300" src={{property.imageSrc}} alt="Card image cap">
+        <div class="card-body">
+          <p><span style="float: left"><b>{{property.name}}</b></span> <span style="float: right">{{property.monthlyRent | currency}}</span></p>
+          <br>
+          <p class="card-text">Num. Beds: {{property.numBeds}} Num. Baths: {{property.numBaths}}</p>
+          <a routerLink="/listing/{{property.id}}" class="btn btn-primary">View Apartment</a>
+        </div>
+    </div>
+</div>
+<h1> Sorry, this page is currently under maintenence. Please check back later.</h1>

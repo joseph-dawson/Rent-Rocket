@@ -5,6 +5,7 @@ import { ListingComponent } from './listing/listing.component';
 import { SearchComponent } from './search/search.component';
 import { LandlordComponent } from './landlord/landlord.component';
 import { LoginComponent } from './login/login.component';
+import { SavedPropertiesComponent } from './saved-properties/saved-properties.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'landlord', component: LandlordComponent },
   { path: 'landlord/:id', component: LandlordComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'saved', component:SavedPropertiesComponent}
 ];
 
 @NgModule({

@@ -1,3 +1,13 @@
+.carousel {
+    width: 33%;
+    margin-left: 16.6%;
+}
+
+.carousel img {
+    width: 100vw;
+    height: 20vw;
+}
+
 .p-2 {
     width:50%
 }

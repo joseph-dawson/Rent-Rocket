@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Property } from '../property-service/property';
 import { PropertyService } from '../property-service/property.service';

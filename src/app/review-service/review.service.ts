@@ -24,5 +24,27 @@ export class ReviewService {
     return of(propertyReviews);
   }
 
+  getLandlordReviewScore(id: number): Observable<number> {
+    const landlordReviews = REVIEWS.filter(r => r.landlordId === id)!;
+    var totalScore = 0;
+    for (var thisReview of landlordReviews) {
+      totalScore += thisReview.rating;
+    }
+    totalScore = totalScore / landlordReviews.length;
+    totalScore = Math.ceil(totalScore);
+    return of(totalScore);
+  }
+
+  getPropertyReviewScore(id: number): Observable<number> {
+    const propertyReviews = REVIEWS.filter(r => r.propertyId === id)!;
+    var totalScore = 0;
+    for (var thisReview of propertyReviews) {
+      totalScore += thisReview.rating;
+    }
+    totalScore = totalScore / propertyReviews.length;
+    totalScore = Math.ceil(totalScore);
+    return of(totalScore);
+  }
+
   constructor() { }
 }
