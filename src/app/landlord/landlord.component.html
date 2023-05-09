@@ -1,6 +1,31 @@
-<div *ngIf="landlord;else other_content">
-    <p>TEMP: {{landlord.name}}, {{landlord.email}}, {{landlord.phone}}, </p>
-    <p>Score: {{score}}</p>
+<div style="margin-left: 16.6%;" *ngIf="landlord;else other_content">
+    <div class="card" style="width: 100rem;">
+        <div class="card-header">
+            <h3>{{landlord.name}}</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Email: </b>{{landlord.email}}</li>
+          <li class="list-group-item"><b>Phone Number: </b>{{landlord.phone}}</li>
+          <li class="list-group-item">{{landlord.name}} has an average rating of {{score}} stars from {{reviews.length}} reviews</li>
+        </ul>
+    </div>
+</div>
+
+<hr style="width: 85%; margin-left: 7.5%">
+
+<div style="margin-left: 25%;clear: both;">
+    <h2>Reviews:</h2>
+    <div *ngFor="let review of reviews">
+        <div  class="card" style="width: 75rem;">
+            <div class="card-body">
+              <h4 class="card-title">{{review.reviewerName}}</h4>
+              <hr>
+              <h5 class="card-subtitle mb-2 text-muted">{{review.rating}} Stars</h5>
+              <p class="card-text">{{review.reviewText}}</p>
+            </div>
+        </div>
+        <br>
+    </div>
 </div>
 
 <ng-template #other_content>

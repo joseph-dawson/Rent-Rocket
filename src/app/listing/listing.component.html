@@ -2,19 +2,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="../../assets/img/Heights.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../../assets/img/Hilltop.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../../assets/img/Shady.jpg" alt="Third slide">
-      </div>
-    </div>
-  </div>
+<div class="image" *ngIf="property">
+  <img src="{{property.imageSrc}}" alt="Image of {{property.name}}">
+</div>
 
 <div class="listing card" *ngIf="property;else other_content">
     <!-- Header with Apartment name -->
@@ -67,17 +57,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-award-fill" viewBox="0 0 16 16">
                             <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
                             <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-                          </svg> <font size="3%"> Resident Rating: 
-                            <div class="col-lg float-container">
-                                <div>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                        </div> 
-                        <p></p>
+                          </svg> <font size="3%"> Resident Rating: {{propertyScore}} Stars
+                            <br>
+                            <br>
                     <button class="btn btn-primary" (click)="SaveProperty()">Save Property</button></font>
                     </li>
                 </ul>

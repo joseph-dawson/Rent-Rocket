@@ -10,6 +10,8 @@ import { Landlord } from '../landlord-service/landlord';
 import { LandlordService } from '../landlord-service/landlord.service';
 import { SearchComponent } from '../search/search.component';
 import { SaveServiceService } from '../save-service.service';
+import { StarsReviewComponent } from './stars-review/stars-review.component';
+
 
 @Component({
   selector: 'app-listing',
@@ -30,7 +32,8 @@ export class ListingComponent {
     private reviewService: ReviewService,
     private landlordService: LandlordService,
     private location: Location,
-    private saveService: SaveServiceService
+    private saveService: SaveServiceService,
+    //private starReview: StarsReviewComponent,
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +42,7 @@ export class ListingComponent {
     this.getLandlord();
     this.getScores();
   }
+
 
   getProperty(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -62,6 +66,10 @@ export class ListingComponent {
       this.reviewService.getLandlordReviewScore(this.landlord.id).subscribe(landlordScore => this.landlordScore = landlordScore);
   }
 
+  //makeStars(num: number): string {
+  //  return(this.starReview.htmlStar(num));
+  //}
+
   SaveProperty()
   {
     if(this.property !=null)
@@ -70,4 +78,6 @@ export class ListingComponent {
     this.saveService.saveProperty(id)
     }
   }
+
+  
 };

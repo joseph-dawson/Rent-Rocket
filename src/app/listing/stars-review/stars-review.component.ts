@@ -15,7 +15,7 @@ import { SearchComponent } from '../../search/search.component';
 })
 export class StarsReviewComponent {
   
-  htmlStar(rating: number): void {
+  htmlStar(rating: number): string {
 
     const fullStar = '<span class="fa fa-star checked"></span>';
     const emptyStar = '<span class="fa fa-star"></span>';
@@ -32,5 +32,8 @@ export class StarsReviewComponent {
     for (let i = carryover; i > 0; i-- ) {
         stars += emptyStar; 
       }
+    return(stars);
     }
+
+    
 }
