@@ -1,4 +1,4 @@
-import { Property } from "../property-service/property";
+import { Property } from "./property-service/property";
 import { REVIEWS } from "./mock-reviews";
 
 export const PROPERTIES: Property[] = [

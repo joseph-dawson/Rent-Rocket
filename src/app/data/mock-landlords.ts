@@ -1,4 +1,4 @@
-import { Landlord } from "../landlord-service/landlord";
+import { Landlord } from "./landlord-service/landlord";
 import { PROPERTIES } from "./mock-properties";
 import { REVIEWS } from "./mock-reviews";
 

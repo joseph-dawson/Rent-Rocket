@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { Property } from '../../property-service/property';
-import { PropertyService } from '../../property-service/property.service';
-import { Review } from '../../review-service/review';
-import { ReviewService } from '../../review-service/review.service';
-import { Landlord } from '../../landlord-service/landlord';
-import { LandlordService } from '../../landlord-service/landlord.service';
+import { Property } from '../../data/property-service/property';
+import { PropertyService } from '../../data/property-service/property.service';
+import { Review } from '../../data/review-service/review';
+import { ReviewService } from '../../data/review-service/review.service';
+import { Landlord } from '../../data/landlord-service/landlord';
+import { LandlordService } from '../../data/landlord-service/landlord.service';
 import { SearchComponent } from '../../search/search.component';
 
 @Component({

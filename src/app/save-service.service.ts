@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Property } from './property-service/property';
+import { Property } from './data/property-service/property';
 import { Observable, of } from 'rxjs';
 import { PROPERTIES } from './data/mock-properties';
 

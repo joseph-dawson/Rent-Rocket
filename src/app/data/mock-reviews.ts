@@ -1,4 +1,4 @@
-import { Review } from "../review-service/review";
+import { Review } from "./review-service/review";
 
 export const REVIEWS: Review[] = [
     //property reviews

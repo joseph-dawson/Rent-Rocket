@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Landlord } from './landlord';
-import { LANDLORDS } from '../data/mock-landlords';
+import { LANDLORDS } from '../mock-landlords';
 
 @Injectable({
   providedIn: 'root'

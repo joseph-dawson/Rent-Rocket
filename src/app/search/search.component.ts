@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Property } from '../property-service/property';
-import { PropertyService } from '../property-service/property.service';
+import { Property } from '../data/property-service/property';
+import { PropertyService } from '../data/property-service/property.service';
 
 @Component({
   selector: 'app-search',

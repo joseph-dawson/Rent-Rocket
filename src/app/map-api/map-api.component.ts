@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PROPERTIES } from '../data/mock-properties';
-import { Property } from '../property-service/property';
+import { Property } from '../data/property-service/property';
 import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 @Component({
   selector: 'app-maps-api',

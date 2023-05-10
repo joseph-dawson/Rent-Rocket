@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Property } from '../property-service/property';
+import { Property } from '../data/property-service/property';
 import { SaveServiceService } from '../save-service.service';
 
 @Component({
