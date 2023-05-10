@@ -95,13 +95,19 @@
         
 	
 	<!--Review boxes. Can be filled with ngFor let review of reviews-->
-    <div style="clear: both; padding: 2%">
-        <h1>Reviews:</h1>
-        <li *ngFor="let review of reviews">
-            <strong>{{review.reviewerName}}: {{review.rating}} Stars</strong>
-            <p>{{review.reviewText}}</p>
-            <p> </p>
-        </li>
+    <div style="margin-left: 18%;clear: both;">
+        <h2>Reviews:</h2>
+        <div *ngFor="let review of reviews">
+            <div  class="card" style="width: 75rem;">
+                <div class="card-body">
+                  <h4 class="card-title">{{review.reviewerName}}</h4>
+                  <hr>
+                  <h5 class="card-subtitle mb-2 text-muted">{{review.rating}} Stars</h5>
+                  <p class="card-text">{{review.reviewText}}</p>
+                </div>
+            </div>
+            <br>
+        </div>
     </div>
 
 <ng-template #other_content>
